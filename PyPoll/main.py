@@ -100,7 +100,7 @@ print("Winner: ", winnerName)
 print("------------------------\n")
 
 analysisFile.write("------------------------\n")
-analysisFile.write("Winner: {winner}".format(winner = winnerName))
+analysisFile.write("Winner: {winner}\n".format(winner = winnerName))
 analysisFile.write("------------------------\n")
 
 analysisFile.close()
