@@ -7,8 +7,7 @@ from threading import local
 locale.setlocale(locale.LC_ALL, '')
 
 # set path for file
-# csvFilePath = os.path.join("..", "Resources", "budget_data.csv")
-csvFilePath = "C:\\Users\\maimy\\Desktop\\python-challenge\\PyBank\\Resources\\budget_data.csv"
+csvFilePath = os.path.join("Resources", "budget_data.csv")
 
 # find the following dataset
 totalMonthsInDataSet = 0
@@ -66,7 +65,8 @@ print("Greatest increase in profits: ", greatestIncreaseInProfitOverPeriod[0], l
 print("Greatest decrease in profits: ", greatestDecreaseInProfitOverPeriod[0], locale.currency(greatestDecreaseInProfitOverPeriod[1]))
 
 # Write to analysis file
-analysisFile = open("C:\\Users\\maimy\\Desktop\\python-challenge\\PyBank\\analysis\\analysis.txt", "w")
+analysisFilePath = os.path.join("analysis", "analysis.txt")
+analysisFile = open(analysisFilePath, "w")
 analysisFile.write("Total months: {count}\n".format(count = totalMonthsInDataSet))
 analysisFile.write("Total: {total}\n".format(total = locale.currency(netTotalProfitLossesOverPeriod)))
 analysisFile.write("Average Changes: {changes}\n".format(changes = locale.currency(changesProfitLossesOverPeriod/(totalMonthsInDataSet - 1))))
